@@ -1,0 +1,143 @@
+body,
+html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #f8f9fa;
+}
+
+.container-fluid img {
+    max-height: 30px;
+    margin-left: 50px;
+}
+
+.main-container {
+    display: flex;
+    flex: 1;
+    margin: auto;
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.sidebar {
+    flex: 0 0 250px;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    margin-right: 20px;
+    overflow-y: auto;
+    height: calc(100vh - 130px); /* Adjusted for the navbar height */
+}
+
+.chat-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    display: none; /* Initially hide */
+    height: calc(100vh - 80px); /* Adjusted for the navbar height */
+}
+
+.chat-box {
+    overflow-y: auto;
+    flex: 1;
+    padding: 20px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.message {
+    margin-bottom: 15px;
+}
+
+.message.user .message-content {
+    background-color: #007bff;
+    color: white;
+    align-self: flex-end;
+}
+
+.message.bot .message-content {
+    background-color: #e9ecef;
+    color: black;
+    align-self: flex-start;
+}
+
+.message-content {
+    max-width: 70%;
+    padding: 10px 15px;
+    border-radius: 20px;
+    display: inline-block;
+    word-wrap: break-word;
+}
+
+.input-group {
+    margin-top: 10px;
+}
+
+.label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.spinner-border {
+    width: 2rem;
+    height: 2rem;
+    border-width: 0.2em;
+}
+
+.alert {
+    display: none;
+}
+
+.select-file-message {
+    display: none;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-align: center;
+    color: #0a0a0a;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    margin: auto; /* Center the div within its parent */
+    max-width: 100%;
+    height: 100%; /* Make sure it takes the full height of its container */
+}
+
+.select-file-message img {
+    max-height: 50px;
+    margin-bottom: 14px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .sidebar {
+        margin-right: 0;
+        margin-bottom: 20px;
+        height: auto;
+        flex: 0 0 auto;
+    }
+
+    .chat-container {
+        height: auto;
+    }
+}
